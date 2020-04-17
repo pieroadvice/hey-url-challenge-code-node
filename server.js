@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 app.use(useragent.express());
 app.use('/', routes);
 app.use((req, res) => {
-  res.status(500).render('404.ejs');
+  res.status(404).render('404.ejs');
 });
 app.use((err, req, res) => {
   console.error('=======', err.stack);
