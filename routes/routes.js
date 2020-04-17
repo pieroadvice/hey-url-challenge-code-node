@@ -24,7 +24,7 @@ const submit_url_validations = [
 
 router.get('/', get_index);
 router.post('/shortUrls', submit_url_validations, submit_url);
-router.get('/:shortUrl/stats', url_stats);
+router.get('/shortUrl/:shortUrl', url_stats);
 router.get('/:shortUrl', get_url);
 
 module.exports = router;
