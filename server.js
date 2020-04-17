@@ -28,8 +28,11 @@ app.use((req, res, next) => {
 
 app.use(useragent.express());
 app.use('/', routes);
+app.use((req, res) => {
+  res.status(500).render('404.ejs');
+});
 app.use((err, req, res) => {
-  console.error(err.stack);
+  console.error('=======', err.stack);
   res.status(500).render('500.ejs');
 });
 
