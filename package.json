@@ -1,6 +1,6 @@
 {
   "name": "nodebookshelfurlshortener",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -23,6 +23,8 @@
     "moment": "^2.24.0",
     "mysql": "^2.18.1",
     "shortid-extend": "0.0.3",
+    "swagger-jsdoc": "^4.0.0",
+    "swagger-ui-express": "^4.1.4",
     "widget-knex-schema": "^1.1.0"
   },
   "devDependencies": {
