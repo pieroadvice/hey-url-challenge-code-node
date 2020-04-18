@@ -12,7 +12,7 @@ exports.up = (knex) => {
     }, false),
     migrate.createTable(knex, 'hit_history', {
       id: { type: 'increments', nullable: false, primary: true, unique: true },
-      url_id: { type: 'integer', nullable: false, unsigned: true, references: 'urls2.id' },
+      url_id: { type: 'integer', nullable: false, unsigned: true, references: 'urls.id' },
       platform: { type: 'string', maxlength: 80, nullable: false },
       browser: { type: 'string', maxlength: 80, nullable: false },
       created_at: { type: 'date', nullable: false }

@@ -1,10 +1,11 @@
 {
   "name": "nodebookshelfurlshortener",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "server.js",
   "scripts": {
     "eslint": "eslint .",
+    "mocha": "NODE_ENV=test mocha --exit",
     "test": "npm run eslint",
     "devStart": "nodemon"
   },
@@ -25,8 +26,11 @@
     "widget-knex-schema": "^1.1.0"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
-    "nodemon": "^2.0.3"
+    "mocha": "^7.1.1",
+    "nodemon": "^2.0.3",
+    "supertest": "^4.0.2"
   }
 }
