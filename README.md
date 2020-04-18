@@ -27,19 +27,16 @@ Original URL format should be validated
 1. Clone repository
 
 2. Install dependencies
-
 ```sh
 $ npm install
 ```
 
 3. Install nodemon globally
-
 ```sh
 $ npm install nodemone -g
 ```
 
 4. create .env file in the proyect root with the following 
-
 ```sh
 MYSQL_USERNAME=xxxxx
 MYSQL_PASSWORD=xxxx
@@ -47,13 +44,13 @@ MYSQL_SERVER=xxxxxx
 MYSQL_DATABASE=xxxxxxx
 ```
 
-5. Create db tables for testing
+5. Create db tables
 ```sh
 $  knex migrate:latest --env development
 $  knex seed:run                          
 ```
 
-6. Populate db tables for testing
+6. Populate db tables
 ```sh
 $  knex seed:run                          
 ```
@@ -63,7 +60,21 @@ $  knex seed:run
 $  npm run devStart                          
 ```
 
+## lint your code
+
+```sh
+$ npm run eslint
+```
+
+## run tests
+when running the test a new database is created and seeded. The `.env` file has to be created prior to run the tests. At the end of the tests the tables created are droped. 
+```sh
+$ npm run mocha
+```
+
 ## Considerations
+
+Access swagger documentation at `/api-docs`
 
 1. Make sure you have Mysql up and running
 2. Check controller actions in `./controllers/`

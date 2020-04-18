@@ -6,9 +6,10 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const useragent = require('express-useragent');
+const swaggerDoc = require('./swaggerDoc');
 const routes = require('./routes/routes');
 let sessionStore = new session.MemoryStore();
-
+swaggerDoc(app);
 app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

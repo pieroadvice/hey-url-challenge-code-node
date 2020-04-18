@@ -22,7 +22,54 @@ const submit_url_validations = [
     })
 ];
 
+/**
+ * @swagger
+ * /:
+ *    get:
+ *      tags: 
+ *      - "home"
+ *      summary: This should render the home page. It includes the form to create a new short url and a table with the list of short urls created
+ *      description: This should render the home page. It includes the form to create a new short url and a table with the list of short urls created
+ *      responses:
+ *        200:
+ *          description: successful operation
+ *          content:
+ *            text/html:
+ *              schema:
+ *                type: string
+ *                description: The home html
+ */
 router.get('/', get_index);
+/**
+ * @swagger
+ * /shortUrls:
+ *    post:
+ *      tags:
+ *      - "submitUrls"
+ *      summary: This should create a short url and then redirect to the home page
+ *      description: This should create a short url and then redirect to the home page
+ *      operationId: updatePetWithForm
+ *      requestBody:
+ *        content:
+ *          'application/x-www-form-urlencoded':
+ *            schema:
+ *              properties:
+ *                fullUrl:
+ *                  description: full url to be shortened, including the protocol (http/https)
+ *                  type: string
+ *              required:
+ *              - fullUrl
+ *            example:
+ *              fullUrl: http://example-url.com
+ *      responses:
+ *        302:
+ *          description: successful operation, redirects to home page
+ *          content:
+ *            text/html:
+ *              schema:
+ *                type: string
+ *                description: The home html
+ */
 router.post('/shortUrls', submit_url_validations, submit_url);
 router.get('/shortUrl/:shortUrl', url_stats);
 router.get('/:shortUrl', get_url);
